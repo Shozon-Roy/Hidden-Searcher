@@ -1,0 +1,450 @@
+/* For cat face */
+.cat {
+  position: relative;
+  height: 170px;
+  width: 192.1px;
+}
+
+.ear {
+  position: absolute;
+  top: -30%;
+  height: 60%;
+  width: 25%;
+  background: #fff;
+}
+.ear::before, .ear::after {
+  content: "";
+  position: absolute;
+  bottom: 24%;
+  height: 10%;
+  width: 5%;
+  border-radius: 50%;
+  background: #161616;
+}
+.ear::after {
+  transform-origin: 50% 100%;
+}
+
+.ear--left {
+  left: -7%;
+  border-radius: 70% 30% 0% 0%/100% 100% 0% 0%;
+  transform: rotate(-15deg);
+}
+.ear--left::before, .ear--left::after {
+  right: 10%;
+}
+.ear--left::after {
+  transform: rotate(-45deg);
+}
+
+.ear--right {
+  right: -7%;
+  border-radius: 30% 70% 0% 0%/100% 100% 0% 0%;
+  transform: rotate(15deg);
+}
+.ear--right::before, .ear--right::after {
+  left: 10%;
+}
+.ear--right::after {
+  transform: rotate(45deg);
+}
+
+.face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #161616;
+  border-radius: 50%;
+}
+
+.eye {
+  position: absolute;
+  top: 35%;
+  height: 30%;
+  width: 31%;
+  background: #fff;
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+}
+.eye::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  border-radius: 0 0 50% 50%/0 0 40% 40%;
+  background: #161616;
+  -webkit-animation: blink 4s infinite ease-in;
+          animation: blink 4s infinite ease-in;
+}
+@-webkit-keyframes blink {
+  0% {
+    height: 0;
+  }
+  90% {
+    height: 0;
+  }
+  92.5% {
+    height: 100%;
+  }
+  95% {
+    height: 0;
+  }
+  97.5% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+@keyframes blink {
+  0% {
+    height: 0;
+  }
+  90% {
+    height: 0;
+  }
+  92.5% {
+    height: 100%;
+  }
+  95% {
+    height: 0;
+  }
+  97.5% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}
+.eye::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  height: 10%;
+  width: 15%;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.eye--left {
+  left: 0;
+}
+.eye--left::before {
+  right: -5%;
+}
+
+.eye--right {
+  right: 0;
+}
+.eye--right::before {
+  left: -5%;
+}
+
+.eye-pupil {
+  position: absolute;
+  top: 25%;
+  height: 50%;
+  width: 20%;
+  background: #161616;
+  border-radius: 50%;
+  -webkit-animation: look-around 4s infinite;
+          animation: look-around 4s infinite;
+}
+@-webkit-keyframes look-around {
+  0% {
+    transform: translate(0);
+  }
+  5% {
+    transform: translate(50%, -25%);
+  }
+  10% {
+    transform: translate(50%, -25%);
+  }
+  15% {
+    transform: translate(-100%, -25%);
+  }
+  20% {
+    transform: translate(-100%, -25%);
+  }
+  25% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes look-around {
+  0% {
+    transform: translate(0);
+  }
+  5% {
+    transform: translate(50%, -25%);
+  }
+  10% {
+    transform: translate(50%, -25%);
+  }
+  15% {
+    transform: translate(-100%, -25%);
+  }
+  20% {
+    transform: translate(-100%, -25%);
+  }
+  25% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.eye--left .eye-pupil {
+  right: 30%;
+}
+.eye--right .eye-pupil {
+  left: 30%;
+}
+.eye-pupil::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: -5%;
+  height: 20%;
+  width: 35%;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.muzzle {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  height: 6%;
+  width: 10%;
+  background: #fff;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 50% 50%/30% 30% 70% 70%;
+}
+
+/* General page styling */
+html {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #161616;
+}
+/* For Search  Page styling  */
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
+}
+ button, input {
+	font: 1em Hind, sans-serif;
+	line-height: 1.5em;
+}
+input {
+	color: #171717;
+}	
+.search-bar {
+	display: flex;
+}
+.search-bar input,
+.search-btn, 
+.search-btn:before, 
+.search-btn:after {
+	transition: all 0.25s ease-out;
+}
+.search-bar input,
+.search-btn {
+	width: 3em;
+	height: 3em;
+}
+.search-bar input:invalid:not(:focus),
+.search-btn {
+	cursor: pointer;
+}
+.search-bar,
+.search-bar input:focus,
+.search-bar input:valid  {
+	width: 100%;
+}
+.search-bar input:focus,
+.search-bar input:not(:focus) + .search-btn:focus {
+	outline: transparent;
+}
+
+.search-bar {
+	margin: auto;
+	padding: 1.5em;
+	justify-content: center;
+	max-width: 30em;
+}
+.search-bar input {
+	background: transparent;
+	border-radius: 1.5em;
+	box-shadow: 0 0 0 0.4em red inset;
+	padding: 0.75em;
+	transform: translate(0.5em,0.5em) scale(0.5);
+	transform-origin: 100% 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.search-bar input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+.search-bar input:focus,
+.search-bar input:valid {
+	background: #fff;
+	border-radius: 0.375em 0 0 0.375em;
+	box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+	transform: scale(1);
+}
+.search-btn {
+	background: red;
+	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+	padding: 0.75em;
+	position: relative;
+	transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
+	transform-origin: 0 50%;
+}
+.search-btn:before, 
+.search-btn:after {
+	content: "";
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+.search-btn:before {
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+	top: 0.75em;
+	left: 0.75em;
+	width: 1.2em;
+	height: 1.2em;
+}
+.search-btn:after {
+	background: #f1f1f1;
+	border-radius: 0 0.25em 0.25em 0;
+	top: 51%;
+	left: 51%;
+	width: 0.75em;
+	height: 0.25em;
+	transform: translate(0.2em,0) rotate(45deg);
+	transform-origin: 0 50%;
+}
+.search-btn span {
+	display: inline-block;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+}
+
+/* Active state */
+.search-bar input:focus + .search-btn,
+.search-bar input:valid + .search-btn {
+	background: #008cff;
+	border-radius: 0 0.375em 0.375em 0;
+	transform: scale(1);
+}
+.search-bar input:focus + .search-btn:before, 
+.search-bar input:focus + .search-btn:after,
+.search-bar input:valid + .search-btn:before, 
+.search-bar input:valid + .search-btn:after {
+	opacity: 1;
+}
+.search-bar input:focus + .search-btn:hover,
+.search-bar input:valid + .search-btn:hover,
+.search-bar input:valid:not(:focus) + .search-btn:focus {
+	background: #0c48db;
+}
+.search-bar input:focus + .search-btn:active,
+.search-bar input:valid + .search-btn:active {
+	transform: translateY(1px);
+}
+	@media screen and (prefers-color-scheme: dark) {
+	body, input {
+		color: #f1f1f1;
+	}
+	body {
+		background: #171717;
+	}
+	.search-bar input {
+		box-shadow: 0 0 0 0.4em #f1f1f1 inset;
+	}
+	.search-bar input:focus,
+	.search-bar input:valid {
+		background: #3d3d3d;
+		box-shadow: 0 0 0 0.1em #3d3d3d inset;
+	}
+	.search-btn {
+		background: #f1f1f1;
+	}
+}
+
+/*  For Side Icon */
+.iconarea{
+position: fixed;
+left: 30px;
+top: 50%;
+transform: translateY(-50%);
+border-radius: 20px;
+background-color: #fff;
+box-shadow: 2px 2px 30px rgb(0, 0, 0,0.1);
+padding: 5px 0px ;
+z-index: 1;
+}
+a{
+text-decoration: none;
+}
+.iconarea a{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 20px 15px ;
+}
+.iconarea a i {
+color: rgba(39, 39, 39, 0.80);
+}
+.iconarea a:hover .fa-facebook-f{
+color: #4267B2;
+}
+.iconarea a:hover .fa-twitter{
+color: #1DA1F2;
+}
+.iconarea a:hover .fa-instagram{
+color: #833AB4;
+}
+.iconarea a:hover .fa-youtube{
+color: #FF0000;
+}
+ /*  For Side User information */
+  div1 {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+         border-radius: 5px;
+         width: 150px;
+         height: 0px auto;
+         padding: 10px;
+         color: #f8f9f9;
+	      font-size:18px;
+         background: black;
+         float:right;
+      }
+      #rgb-color {
+        color: rgb(0, 255, 0);
+      }
+        #rgb1-color {
+          color: rgb(255, 0, 0);
+        }
+          #rgb2-color {
+            color: rgb(0, 0, 255);
+          }

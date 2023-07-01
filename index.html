@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Searcher By - WH173_D3V1L</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+<script src="https://kit.fontawesome.com/ab3c1e0223.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="iconarea">
+<a href="https://www.facebook.com/shozon.roy2" target="blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://twitter.com/Shozon Roy" target="blank"><i class="fab fa-twitter"></i></a>
+<a href="https://www.instagram.com/shozon_roy" target="blank"><i
+class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com/channel/3" target="_blank"><i
+class="fab fa-youtube"></i></a>
+</div>
+
+<div align="center">
+<div class="cat">
+	<div class="ear ear--left"></div>
+	<div class="ear ear--right"></div>
+	<div class="face">
+		<div class="eye eye--left">
+			<div class="eye-pupil"></div>
+		</div>
+		<div class="eye eye--right">
+			<div class="eye-pupil"></div>
+		</div>
+		<div class="muzzle"></div>
+	</div>
+</div>
+
+
+<form aria-labelledby="search-title" spellcheck="false" data-test-id="search-form" autocomplete="off"
+class="search-bar" action="https://www.google.com/search?q=" >
+	<input type="search"  name="search" pattern=".*\S.*" required>
+	<button class="search-btn" type="submit">
+		<span>Search</span>
+
+	</button>
+</form>
+	</div>
+
+	
+  
+     <div1>
+     <code>
+       <small>
+         <center>
+           <hr />
+         <b id="rgb2-color">You're Login On</b>
+         <hr />
+         </center>
+            <b id="rgb-color">Hour: <span id="H1"></span></b>
+            <br/>
+            <b id="rgb-color">Minutes: <span id="M2"></span></b>
+            <br/>
+            <b id="rgb-color">Seconds: <span id="S3"></span></b>
+            <br/>
+
+             <b id="rgb-color">Good:-<span id="E2"></span></b>
+            <br/>
+
+            <b id="rgb-color">Week: <span id="W7"></span></b>
+            <br/>
+            <b id="rgb-color">Month:  <b ><span id="M5"></span></b>
+            <br/>
+            <b id="rgb-color">Day: <span id="D6"></span></b>
+            <br/>
+            <b id="rgb-color">Year: <span id="Y7"></span></b>
+            <br/>
+            
+            <center>
+              <hr />
+             <b id="rgb2-color">You Device info</b>
+             <hr />
+             </center>
+             <small>
+               <b>User: <span id="U3"></span>
+                </b>
+                </small>
+                <br/>
+                <br/>
+
+                <center>
+                <hr />
+                  <b id="rgb2-color">You are Online?</b>
+                  <hr />
+          
+              <b id="rgb-color"><span id="O1"></span></b>
+              
+                  </center>
+
+       </small>
+     </code>
+     <script>
+     // HOUR //
+     var date = new Date();
+       var hour = date.getHours();
+       document.getElementById("H1").innerHTML = hour;
+     // MINUTES // 
+      var date = new Date();
+        var minutes = date.getMinutes();
+        document.getElementById("M2").innerHTML = minutes;
+     // SECOND //
+      var date = new Date();
+        var seconds = date.getSeconds();
+        document.getElementById("S3").innerHTML = seconds;
+
+     // WEEK //
+     var date = new Date();
+       var day = date.getDay();
+       document.getElementById("W7").innerHTML = day;
+	   
+     // MONTH  //
+      var date = new Date();
+    var month = date.getMonth();
+    document.getElementById("M5").innerHTML = month+1;
+     // DAY //
+     var date = new Date();
+       var day = date.getDate();
+       document.getElementById("D6").innerHTML = day;
+     // YEAR //
+     var date = new Date();
+       var year = date.getFullYear();
+       document.getElementById("Y7").innerHTML = year;
+     // D H N //
+     function greetUser() {
+       var time = new Date().getHours();
+       if (time < 11) {
+         return "Morning";
+       } else if (time < 18) {
+         return "Afternoon";
+       } else {
+         return "Evening";
+       }
+     }
+     document.getElementById("E2").innerHTML = greetUser();
+     // YOUR DEVICE  INFO //
+     document.getElementById("U3").innerHTML =
+       navigator.userAgent;
+       // IF YOU ONLINE //
+     document.getElementById("O1").innerHTML =
+       navigator.onLine;
+     </script>
+   </div1>
+</body>
+</html>
